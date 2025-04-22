@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perde Dünyası - Yönetim Paneli</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-storage.js"></script>
+    <script src="firebase-config.js"></script>
+    <script src="dashboard.js"></script>
+</head>
+<body>
+    <div id="login-container" class="login-container">
+        <div class="login-form">
+            <h2>Giriş Yap</h2>
+            <form id="login-form">
+                <div class="form-group">
+                    <label>E-posta</label>
+                    <input type="email" id="email" required>
+                </div>
+                <div class="form-group">
+                    <label>Şifre</label>
+                    <input type="password" id="password" required>
+                </div>
+                <button type="submit" class="submit-btn">Giriş Yap</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="dashboard-container" class="dashboard-container" style="display: none;">
+        <aside class="sidebar">
+            <div class="logo">Perde Dünyası</div>
+            <nav>
+                <ul>
+                    <li><a href="#urunler" class="active"><i class="fas fa-box"></i> Ürünler</a></li>
+                    <li><a href="#kategoriler"><i class="fas fa-tags"></i> Kategoriler</a></li>
+                    <li><a href="#resimler"><i class="fas fa-images"></i> Resimler</a></li>
+                    <li><a href="#iletisim"><i class="fas fa-address-book"></i> İletişim Bilgileri</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="content">
+            <header>
+                <h1>Yönetim Paneli</h1>
+                <div class="user-info">
+                    <span id="user-email">Hoş geldiniz</span>
+                    <button class="logout-btn">Çıkış Yap</button>
+                </div>
+            </header>
+
+            <section id="urunler" class="section">
+                <h2>Ürün Yönetimi</h2>
+                <div class="form-container">
+                    <form id="urun-form">
+                        <div class="form-group">
+                            <label>Ürün Adı</label>
+                            <input type="text" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Kategori</label>
+                            <select name="category" required>
+                                <option value="">Seçiniz</option>
+                                <option value="stor">Stor Perde</option>
+                                <option value="zebra">Zebra Perde</option>
+                                <option value="klasik">Klasik Perde</option>
+                                <option value="guneslik">Güneşlik</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Fiyat (₺/m²)</label>
+                            <input type="number" name="price" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Açıklama</label>
+                            <textarea name="description" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>Resim Yükle</label>
+                            <input type="file" name="image" accept="image/*" required>
+                            <div id="image-preview" class="image-preview"></div>
+                        </div>
+                        <button type="submit" class="submit-btn">Ürün Ekle</button>
+                    </form>
+                </div>
+
+                <div class="products-list">
+                    <h3>Mevcut Ürünler</h3>
+                    <div id="products-container" class="products-grid"></div>
+                </div>
+            </section>
+
+            <section id="iletisim" class="section">
+                <h2>İletişim Bilgileri</h2>
+                <div class="form-container">
+                    <form id="iletisim-form">
+                        <div class="form-group">
+                            <label>Telefon</label>
+                            <input type="tel" name="phone" required>
+                        </div>
+                        <div class="form-group">
+                            <label>WhatsApp</label>
+                            <input type="tel" name="whatsapp" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Instagram</label>
+                            <input type="text" name="instagram" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Adres</label>
+                            <textarea name="address" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">Bilgileri Güncelle</button>
+                    </form>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+</html> 
