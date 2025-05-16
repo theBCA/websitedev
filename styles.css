@@ -53,23 +53,47 @@ nav {
     color: #3498db;
 }
 
+.lang-switcher {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-left: 1.5rem;
+}
+
+.flag {
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: transform 0.2s;
+    user-select: none;
+}
+
+.flag:hover {
+    transform: scale(1.2);
+}
+
 /* Hero Section */
 .hero {
-    height: 100vh;
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://via.placeholder.com/1920x1080');
-    background-size: cover;
-    background-position: center;
+    position: relative;
+    min-height: 60vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    text-align: center;
-    color: white;
-    padding-top: 80px;
+    overflow: hidden;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('images/copy15perde.png');
+    background-size: cover;
+    background-position: center;
+}
+
+/* Remove hero gallery and swipe button styles */
+.hero-bg-gallery, .hero-bg-image, .hero-swipe {
+    display: none !important;
 }
 
 .hero-content {
-    max-width: 800px;
-    padding: 2rem;
+    position: relative;
+    z-index: 3;
+    text-align: center;
+    color: #fff;
 }
 
 .hero h1 {
@@ -264,6 +288,28 @@ footer {
 
 .category-item p {
     color: #666;
+}
+
+/* Category backgrounds */
+.category-item:nth-child(1) {
+    background: url('images/copyperde11.png') center/cover no-repeat;
+    color: #fff;
+}
+.category-item:nth-child(2) {
+    background: url('images/copyperde12.png') center/cover no-repeat;
+    color: #fff;
+}
+.category-item:nth-child(3) {
+    background: url('images/perde6copy.png') center/cover no-repeat;
+    color: #fff;
+}
+.category-item:nth-child(4) {
+    background: url('images/perde10copy.png') center/cover no-repeat;
+    color: #fff;
+}
+
+.category-item h3, .category-item p, .category-item i {
+    text-shadow: 0 2px 8px rgba(0,0,0,0.4);
 }
 
 /* Responsive Design */

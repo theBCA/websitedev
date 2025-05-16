@@ -10,88 +10,77 @@
     <!-- Firebase SDK -->
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+    <link rel="icon" type="image/png" href="/images/perdenologo.png">
 </head>
 <body>
     <header>
         <nav>
             <div class="logo">Perde Dünyası</div>
             <ul class="nav-links">
-                <li><a href="#anasayfa">Ana Sayfa</a></li>
-                <li><a href="#kategoriler">Kategoriler</a></li>
-                <li><a href="#modeller">Modeller</a></li>
-                <li><a href="#hakkimizda">Hakkımızda</a></li>
-                <li><a href="#iletisim">İletişim</a></li>
+                <li><a href="#anasayfa" data-i18n="nav_home">Ana Sayfa</a></li>
+                <!-- <li><a href="#kategoriler">Kategoriler</a></li> -->
+                <li><a href="#modeller" data-i18n="nav_models">Modeller</a></li>
+                <li><a href="#hakkimizda" data-i18n="nav_about">Hakkımızda</a></li>
+                <li><a href="#iletisim" data-i18n="nav_contact">İletişim</a></li>
             </ul>
+            <div class="lang-switcher">
+                <span class="flag" data-lang="tr" title="Türkçe">
+                    <svg width="24" height="16" viewBox="0 0 24 16"><rect width="24" height="16" fill="#E30A17"/><circle cx="9" cy="8" r="5" fill="#fff"/><circle cx="10" cy="8" r="4" fill="#E30A17"/><circle cx="11.5" cy="8" r="1.5" fill="#fff"/></svg>
+                </span>
+                <span class="flag" data-lang="en" title="English">
+                    <svg width="24" height="16" viewBox="0 0 24 16"><rect width="24" height="16" fill="#00247d"/><path d="M0,0 L24,16 M24,0 L0,16" stroke="#fff" stroke-width="3"/><path d="M0,0 L24,16 M24,0 L0,16" stroke="#cf142b" stroke-width="1.5"/><rect x="10" width="4" height="16" fill="#fff"/><rect y="6" width="24" height="4" fill="#fff"/><rect x="11" width="2" height="16" fill="#cf142b"/><rect y="7" width="24" height="2" fill="#cf142b"/></svg>
+                </span>
+                <span class="flag" data-lang="de" title="Deutsch">
+                    <svg width="24" height="16" viewBox="0 0 24 16"><rect width="24" height="16" fill="#ffce00"/><rect width="24" height="10.67" fill="#dd0000"/><rect width="24" height="5.33" fill="#000"/></svg>
+                </span>
+            </div>
         </nav>
     </header>
 
     <main>
         <section id="anasayfa" class="hero">
-            <div class="hero-content">
-                <h1>Evinize Şıklık Katın</h1>
-                <p>En kaliteli perdeler, en uygun fiyatlarla</p>
-                <a href="#modeller" class="cta-button">Modelleri İncele</a>
+            <div class="hero-bg-gallery">
+                <div class="hero-bg-image"></div>
             </div>
-        </section>
-
-        <section id="kategoriler" class="categories">
-            <h2>Perde Kategorileri</h2>
-            <div class="categories-grid">
-                <div class="category-item">
-                    <i class="fas fa-window-maximize"></i>
-                    <h3>Stor Perdeler</h3>
-                    <p>Modern ve pratik çözümler</p>
-                </div>
-                <div class="category-item">
-                    <i class="fas fa-layer-group"></i>
-                    <h3>Zebra Perdeler</h3>
-                    <p>Işık kontrolü için ideal</p>
-                </div>
-                <div class="category-item">
-                    <i class="fas fa-palette"></i>
-                    <h3>Klasik Perdeler</h3>
-                    <p>Zarif ve şık tasarımlar</p>
-                </div>
-                <div class="category-item">
-                    <i class="fas fa-sun"></i>
-                    <h3>Güneşlikler</h3>
-                    <p>UV korumalı çözümler</p>
-                </div>
+            <div class="hero-content">
+                <h1 data-i18n="hero_title">Evinize Şıklık Katın</h1>
+                <p data-i18n="hero_subtitle">En kaliteli perdeler, en uygun fiyatlarla</p>
+                <a href="#modeller" class="cta-button" data-i18n="hero_button">Modelleri İncele</a>
             </div>
         </section>
 
         <section id="modeller" class="gallery">
-            <h2>Öne Çıkan Modeller</h2>
+            <h2 data-i18n="gallery_title">Öne Çıkan Modeller</h2>
             <div class="gallery-grid">
                 <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Modern Stor Perde">
-                    <h3>Modern Stor Perde</h3>
-                    <p>%100 pamuk, ışık geçirgen</p>
-                    <span class="price">₺450/m²</span>
+                    <img src="images/copy15perde.png" alt="Modern Stor Perde">
+                    <h3 data-i18n="model1_title">Modern Stor Perde</h3>
+                    <p data-i18n="model1_desc">%100 pamuk, ışık geçirgen</p>
+                    <span class="price" data-i18n="model1_price">₺450/m²</span>
                 </div>
                 <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1513519245088-0e12902e5a38?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Zebra Perde">
-                    <h3>Zebra Perde</h3>
-                    <p>Pratik kullanım, ışık kontrolü</p>
-                    <span class="price">₺600/m²</span>
+                    <img src="images/copyperde11.png" alt="Zebra Perde">
+                    <h3 data-i18n="model2_title">Zebra Perde</h3>
+                    <p data-i18n="model2_desc">Pratik kullanım, ışık kontrolü</p>
+                    <span class="price" data-i18n="model2_price">₺600/m²</span>
                 </div>
                 <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1513519245088-0e12902e5a38?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Klasik Perde">
-                    <h3>Klasik Perde</h3>
-                    <p>Elegant tasarım, %100 pamuk</p>
-                    <span class="price">₺550/m²</span>
+                    <img src="images/copyperde12.png" alt="Klasik Perde">
+                    <h3 data-i18n="model3_title">Klasik Perde</h3>
+                    <p data-i18n="model3_desc">Elegant tasarım, %100 pamuk</p>
+                    <span class="price" data-i18n="model3_price">₺550/m²</span>
                 </div>
                 <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Güneşlik">
-                    <h3>Güneşlik</h3>
-                    <p>UV korumalı, dayanıklı</p>
-                    <span class="price">₺400/m²</span>
+                    <img src="images/perde6copy.png" alt="Güneşlik">
+                    <h3 data-i18n="model4_title">Güneşlik</h3>
+                    <p data-i18n="model4_desc">UV korumalı, dayanıklı</p>
+                    <span class="price" data-i18n="model4_price">₺400/m²</span>
                 </div>
             </div>
         </section>
 
         <section id="iletisim" class="contact">
-            <h2>İletişim</h2>
+            <h2 data-i18n="contact_title">İletişim</h2>
             <div class="contact-info">
                 <div class="contact-item">
                     <i class="fas fa-phone"></i>
@@ -115,7 +104,7 @@
 
     <footer>
         <div class="footer-content">
-            <p>&copy; 2024 Perde Dünyası. Tüm hakları saklıdır.</p>
+            <p data-i18n="footer_text">&copy; 2024 Perde Dünyası. Tüm hakları saklıdır.</p>
             <div class="social-links">
                 <a href="#"><i class="fab fa-instagram"></i></a>
                 <a href="#"><i class="fab fa-whatsapp"></i></a>
