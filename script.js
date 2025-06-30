@@ -2,9 +2,12 @@
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
-        });
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            target.scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
     });
 });
 
@@ -39,23 +42,21 @@ document.querySelectorAll('.gallery-item').forEach(item => {
     observer.observe(item);
 });
 
-// Initialize Firebase
-const firebaseConfig = {
-    apiKey: "AIzaSyCDbMB-T1scrE57qnF2T0Mac-8Vw7jSssM",
-    authDomain: "perde-website.firebaseapp.com",
-    projectId: "perde-website",
-    storageBucket: "perde-website.appspot.com",
-    messagingSenderId: "908490709170",
-    appId: "1:908490709170:web:7e200d3abd37204be611ab",
-    databaseURL: "https://perde-website-default-rtdb.europe-west1.firebasedatabase.app"
-};
-
-// Initialize Firebase
-firebase.initializeApp(firebaseConfig);
-const database = firebase.database();
+// Initialize Firebase (configuration is in firebase-config.js)
+let database;
+try {
+    database = firebase.database();
+} catch (error) {
+    console.error('Firebase initialization failed:', error);
+}
 
 // Load and display contact information
 function loadContactInfo() {
+    if (!database) {
+        console.error('Database not initialized');
+        return;
+    }
+    
     console.log('Starting to load contact information...');
     const contactRef = database.ref('contact');
     console.log('Database reference created:', contactRef);

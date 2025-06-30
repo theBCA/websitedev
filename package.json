@@ -1,7 +1,22 @@
 {
+  "name": "perde-website",
+  "version": "1.0.0",
+  "description": "Perde Dünyası - Kaliteli Perdeler Website",
+  "main": "index.html",
+  "scripts": {
+    "build": "echo 'Build completed - static site ready'",
+    "start": "firebase serve",
+    "deploy": "firebase deploy"
+  },
   "dependencies": {
     "firebase-admin": "^13.4.0",
     "mime": "^4.0.7",
     "mime-types": "^3.0.1"
-  }
+  },
+  "devDependencies": {
+    "firebase-tools": "^13.0.0"
+  },
+  "keywords": ["curtains", "perde", "website", "firebase"],
+  "author": "Perde Dünyası",
+  "license": "MIT"
 }

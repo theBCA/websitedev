@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://perde-website.web.app/sitemap.xml
+
+# Disallow admin areas
+Disallow: /dashboard.html
+Disallow: /uploadProducts.js 

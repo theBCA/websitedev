@@ -1,12 +1,26 @@
 {
   "hosting": {
-    "public": "public",
+    "public": ".",
     "ignore": [
       "firebase.json",
       "**/.*",
-      "**/node_modules/**"
+      "**/node_modules/**",
+      "package.json",
+      "package-lock.json",
+      "README.md",
+      ".gitignore",
+      ".firebaserc",
+      "uploadProducts.js",
+      "dashboard.html",
+      "dashboard.css",
+      "dashboard.js",
+      "public/**"
     ],
     "rewrites": [
+      {
+        "source": "/dashboard.html",
+        "destination": "/dashboard.html"
+      },
       {
         "source": "**",
         "destination": "/index.html"
