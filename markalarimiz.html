@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-tr="Markalarımız | Günpay Perde" data-en="Our Brands | Günpay Perde" data-de="Unsere Marken | Günpay Perde">Markalarımız | Günpay Perde</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/jpeg" href="images/gunpay.jpg">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .brands-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 24px;
+            margin: 40px 0;
+        }
+        .brand-card {
+            background: var(--light-color);
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            transition: box-shadow 0.2s, transform 0.2s;
+            cursor: pointer;
+            position: relative;
+        }
+        .brand-card:hover {
+            box-shadow: var(--shadow-hover);
+            transform: translateY(-6px) scale(1.03);
+        }
+        .brand-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            display: block;
+        }
+        .brand-card .brand-title {
+            position: absolute;
+            left: 0; right: 0; bottom: 0;
+            background: rgba(34,40,49,0.7);
+            color: #fff;
+            font-size: 1.1rem;
+            font-weight: 500;
+            padding: 10px 16px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header/Navbar (reuse from index.html) -->
+    <header class="header">
+        <div class="header-top">
+            <div class="container">
+                <div class="contact-info">
+                    <span><i class="fas fa-envelope"></i> gunpay@gunpay.com.tr</span>
+                    <span><i class="fas fa-phone"></i> +90 212 343 66 86</span>
+                </div>
+                <div class="header-actions">
+                    <a href="#iletisim" class="teklif-btn" data-tr="Teklif Talebi" data-en="Request Quote" data-de="Angebot anfordern">Teklif Talebi</a>
+                    <div class="language-switcher">
+                        <span class="active" data-lang="tr">TR</span>
+                        <span data-lang="en">EN</span>
+                        <span data-lang="de">DE</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <nav class="navbar">
+            <div class="container">
+                <div class="navbar-brand">
+                    <img src="images/gunpay.jpg" alt="Günpay Logo" class="logo">
+                </div>
+                <div class="navbar-menu">
+                    <ul class="nav-list">
+                        <li><a href="index.html" class="nav-link" data-tr="Anasayfa" data-en="Home" data-de="Startseite">Anasayfa</a></li>
+                        <li class="dropdown">
+                            <a href="kurumsal.html" class="nav-link" data-tr="Kurumsal" data-en="Corporate" data-de="Unternehmen">Kurumsal <i class="fas fa-chevron-down"></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="kurumsal.html#hakkimizda" data-tr="Hakkımızda" data-en="About Us" data-de="Über uns">Hakkımızda</a></li>
+                                <li><a href="markalarimiz.html" data-tr="Markalarımız" data-en="Our Brands" data-de="Unsere Marken">Markalarımız</a></li>
+                                <li><a href="kurumsal.html#finansal-bilgiler" data-tr="Finansal ve Ticari Bilgiler" data-en="Financial and Commercial Information" data-de="Finanz- und Handelsinformationen">Finansal ve Ticari Bilgiler</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="urunlerimiz.html" class="nav-link" data-tr="Ürünlerimiz" data-en="Our Products" data-de="Unsere Produkte">Ürünlerimiz</a></li>
+                        <li class="dropdown">
+                            <a href="referanslar.html" class="nav-link" data-tr="Referanslar" data-en="References" data-de="Referenzen">Referanslar <i class="fas fa-chevron-down"></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="referanslar.html#devam-eden-projeler" data-tr="Devam Eden Projeler" data-en="Ongoing Projects" data-de="Laufende Projekte">Devam Eden Projeler</a></li>
+                                <li><a href="referanslar.html#tamamlanan-projeler" data-tr="Tamamlanan Projeler" data-en="Completed Projects" data-de="Abgeschlossene Projekte">Tamamlanan Projeler</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#iletisim" class="nav-link" data-tr="İletişim" data-en="Contact" data-de="Kontakt">İletişim</a></li>
+                    </ul>
+                </div>
+                <div class="navbar-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="section-box">
+            <h2 style="font-weight:600;" data-tr="Markalarımız & Projelerimiz" data-en="Our Brands & Projects" data-de="Unsere Marken & Projekte">Markalarımız & Projelerimiz</h2>
+            <div class="brands-grid">
+                <a href="#" class="brand-card"><img src="images/gunpay.jpg" alt="Brand 1"><span class="brand-title" data-tr="DenizBank" data-en="DenizBank" data-de="DenizBank">DenizBank</span></a>
+                <a href="#" class="brand-card"><img src="images/gunpay.jpg" alt="Brand 2"><span class="brand-title" data-tr="Sapphire Çarşı" data-en="Sapphire Mall" data-de="Sapphire Einkaufszentrum">Sapphire Çarşı</span></a>
+                <a href="#" class="brand-card"><img src="images/gunpay.jpg" alt="Brand 3"><span class="brand-title" data-tr="Trump Towers" data-en="Trump Towers" data-de="Trump Towers">Trump Towers</span></a>
+                <a href="#" class="brand-card"><img src="images/gunpay.jpg" alt="Brand 4"><span class="brand-title" data-tr="Crowne Plaza" data-en="Crowne Plaza" data-de="Crowne Plaza">Crowne Plaza</span></a>
+                <a href="#" class="brand-card"><img src="images/gunpay.jpg" alt="Brand 5"><span class="brand-title" data-tr="Roche" data-en="Roche" data-de="Roche">Roche</span></a>
+                <a href="#" class="brand-card"><img src="images/gunpay.jpg" alt="Brand 6"><span class="brand-title" data-tr="Four Seasons" data-en="Four Seasons" data-de="Four Seasons">Four Seasons</span></a>
+                <a href="#" class="brand-card"><img src="images/gunpay.jpg" alt="Brand 7"><span class="brand-title" data-tr="Jumeirah Beach Hotel" data-en="Jumeirah Beach Hotel" data-de="Jumeirah Beach Hotel">Jumeirah Beach Hotel</span></a>
+                <a href="#" class="brand-card"><img src="images/gunpay.jpg" alt="Brand 8"><span class="brand-title" data-tr="Ziraat Bankası" data-en="Ziraat Bank" data-de="Ziraat Bank">Ziraat Bankası</span></a>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4 data-tr="Günpay Perde" data-en="Günpay Perde" data-de="Günpay Perde">Günpay Perde</h4>
+                    <p data-tr="Modern perde çözümleri ile yaşam alanlarınıza değer katıyoruz." data-en="We add value to your living spaces with modern curtain solutions." data-de="Wir verleihen Ihren Wohnräumen mit modernen Vorhanglösungen Wert.">Modern perde çözümleri ile yaşam alanlarınıza değer katıyoruz.</p>
+                </div>
+                <div class="footer-section">
+                    <h4 data-tr="Hızlı Linkler" data-en="Quick Links" data-de="Schnelllinks">Hızlı Linkler</h4>
+                    <ul>
+                        <li><a href="index.html" data-tr="Anasayfa" data-en="Home" data-de="Startseite">Anasayfa</a></li>
+                        <li><a href="kurumsal.html" data-tr="Kurumsal" data-en="Corporate" data-de="Unternehmen">Kurumsal</a></li>
+                        <li><a href="urunlerimiz.html" data-tr="Ürünlerimiz" data-en="Our Products" data-de="Unsere Produkte">Ürünlerimiz</a></li>
+                        <li><a href="referanslar.html" data-tr="Referanslar" data-en="References" data-de="Referenzen">Referanslar</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 data-tr="İletişim" data-en="Contact" data-de="Kontakt">İletişim</h4>
+                    <ul>
+                        <li><i class="fas fa-envelope"></i> gunpay@gunpay.com.tr</li>
+                        <li><i class="fas fa-phone"></i> +90 212 343 66 86</li>
+                        <li><i class="fas fa-map-marker-alt"></i> <span data-tr="İstanbul, Türkiye" data-en="Istanbul, Turkey" data-de="Istanbul, Türkei">İstanbul, Türkiye</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p data-tr="© 2024 Günpay Perde. Tüm hakları saklıdır." data-en="© 2024 Günpay Perde. All rights reserved." data-de="© 2024 Günpay Perde. Alle Rechte vorbehalten.">© 2024 Günpay Perde. Tüm hakları saklıdır.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html> 

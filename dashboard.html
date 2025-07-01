@@ -3,8 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Perde Dünyası - Yönetim Paneli</title>
+    <title>Günpay Perde - Yönetim Paneli</title>
+    <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="dashboard.css">
+    <link rel="icon" type="image/png" href="images/perdenologo.png">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <!-- Firebase SDK -->
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
@@ -17,105 +20,249 @@
 <body>
     <div id="login-container" class="login-container">
         <div class="login-form">
-            <h2>Giriş Yap</h2>
+            <h2 data-tr="Giriş Yap" data-en="Login" data-de="Anmelden">Giriş Yap</h2>
             <form id="login-form">
                 <div class="form-group">
-                    <label>E-posta</label>
+                    <label data-tr="E-posta" data-en="Email" data-de="E-Mail">E-posta</label>
                     <input type="email" id="email" required>
                 </div>
                 <div class="form-group">
-                    <label>Şifre</label>
+                    <label data-tr="Şifre" data-en="Password" data-de="Passwort">Şifre</label>
                     <input type="password" id="password" required>
                 </div>
-                <button type="submit" class="submit-btn">Giriş Yap</button>
+                <button type="submit" class="submit-btn" data-tr="Giriş Yap" data-en="Login" data-de="Anmelden">Giriş Yap</button>
             </form>
         </div>
     </div>
 
     <div id="dashboard-container" class="dashboard-container" style="display: none;">
         <aside class="sidebar">
-            <div class="logo">Perde Dünyası</div>
+            <div class="logo">
+                <img src="images/gunpay.jpg" alt="Günpay Logo" style="height: 60px; width: auto; margin-right: 10px;">
+                <span data-tr="Günpay Perde Yönetim" data-en="Günpay Perde Management" data-de="Günpay Perde Verwaltung">Günpay Perde Yönetim</span>
+            </div>
             <nav>
                 <ul>
-                    <li><a href="#urunler" class="active"><i class="fas fa-box"></i> Ürünler</a></li>
-                    <li><a href="#kategoriler"><i class="fas fa-tags"></i> Kategoriler</a></li>
-                    <li><a href="#resimler"><i class="fas fa-images"></i> Resimler</a></li>
-                    <li><a href="#iletisim"><i class="fas fa-address-book"></i> İletişim Bilgileri</a></li>
+                    <li><a href="#anasayfa" class="active"><i class="fas fa-home"></i> <span data-tr="Anasayfa" data-en="Home" data-de="Startseite">Anasayfa</span></a></li>
+                    <li><a href="#hakkimizda"><i class="fas fa-info-circle"></i> <span data-tr="Hakkımızda" data-en="About Us" data-de="Über uns">Hakkımızda</span></a></li>
+                    <li><a href="#urunler"><i class="fas fa-box"></i> <span data-tr="Ürünler" data-en="Products" data-de="Produkte">Ürünler</span></a></li>
+                    <li><a href="#referanslar"><i class="fas fa-project-diagram"></i> <span data-tr="Referanslar" data-en="References" data-de="Referenzen">Referanslar</span></a></li>
+                    <li><a href="#markalar"><i class="fas fa-tags"></i> <span data-tr="Markalarımız" data-en="Our Brands" data-de="Unsere Marken">Markalarımız</span></a></li>
+                    <li><a href="#sosyal"><i class="fas fa-leaf"></i> <span data-tr="Sosyal Sorumluluk" data-en="Social Responsibility" data-de="Soziale Verantwortung">Sosyal Sorumluluk</span></a></li>
+                    <li><a href="#iletisim"><i class="fas fa-address-book"></i> <span data-tr="İletişim" data-en="Contact" data-de="Kontakt">İletişim</span></a></li>
                 </ul>
             </nav>
+            <div class="language-switcher-dashboard">
+                <span class="lang-btn active" data-lang="tr">TR</span>
+                <span class="lang-btn" data-lang="en">EN</span>
+                <span class="lang-btn" data-lang="de">DE</span>
+            </div>
         </aside>
 
         <main class="content">
             <header>
-                <h1>Yönetim Paneli</h1>
+                <h1 data-tr="Yönetim Paneli" data-en="Management Panel" data-de="Verwaltungspanel">Yönetim Paneli</h1>
                 <div class="user-info">
-                    <span id="user-email">Hoş geldiniz</span>
-                    <button class="logout-btn">Çıkış Yap</button>
+                    <span id="user-email" data-tr="Hoş geldiniz" data-en="Welcome" data-de="Willkommen">Hoş geldiniz</span>
+                    <button class="logout-btn" data-tr="Çıkış Yap" data-en="Logout" data-de="Abmelden">Çıkış Yap</button>
                 </div>
             </header>
 
+            <!-- Anasayfa Section -->
+            <section id="anasayfa" class="section active">
+                <h2 data-tr="Anasayfa İçeriği" data-en="Homepage Content" data-de="Startseiten-Inhalt">Anasayfa İçeriği</h2>
+                <div class="form-container">
+                    <form id="anasayfa-form">
+                        <div class="form-group">
+                            <label data-tr="Ana Başlık" data-en="Main Title" data-de="Haupttitel">Ana Başlık</label>
+                            <input type="text" name="title" value="Hoşgeldiniz" required>
+                        </div>
+                        <div class="form-group">
+                            <label data-tr="Alt Başlık" data-en="Subtitle" data-de="Untertitel">Alt Başlık</label>
+                            <textarea name="subtitle" required>Günpay Perde'ye hoşgeldiniz. Modern ve çağdaş perde çözümleriyle hizmetinizdeyiz.</textarea>
+                        </div>
+                        <div class="form-group">
+                            <label data-tr="Hero Arkaplan Resmi" data-en="Hero Background Image" data-de="Hero-Hintergrundbild">Hero Arkaplan Resmi</label>
+                            <input type="file" name="hero-image" accept="image/*">
+                            <div id="hero-image-preview" class="image-preview"></div>
+                        </div>
+                        <button type="submit" class="submit-btn" data-tr="Güncelle" data-en="Update" data-de="Aktualisieren">Güncelle</button>
+                    </form>
+                </div>
+            </section>
+
+            <!-- Hakkımızda Section -->
+            <section id="hakkimizda" class="section">
+                <h2 data-tr="Hakkımızda İçeriği" data-en="About Us Content" data-de="Über uns Inhalt">Hakkımızda İçeriği</h2>
+                <div class="form-container">
+                    <form id="hakkimizda-form">
+                        <div class="form-group">
+                            <label data-tr="Firma Profili Başlığı" data-en="Company Profile Title" data-de="Firmenprofil-Titel">Firma Profili Başlığı</label>
+                            <input type="text" name="profile-title" value="Firma Profili" required>
+                        </div>
+                        <div class="form-group">
+                            <label data-tr="Firma Profili İçeriği" data-en="Company Profile Content" data-de="Firmenprofil-Inhalt">Firma Profili İçeriği</label>
+                            <textarea name="profile-content" rows="4" required>Günpay Perde, 1990 yılından bu yana modern ve çağdaş perde sektöründe yenilikçi çözümler sunan, sektörün öncü firmalarından biridir.</textarea>
+                        </div>
+                        <div class="form-group">
+                            <label data-tr="Misyonumuz" data-en="Our Mission" data-de="Unsere Mission">Misyonumuz</label>
+                            <textarea name="mission" rows="3" required>Yaşam ve çalışma alanlarına değer katan, fonksiyonel ve estetik perde sistemleriyle müşterilerimizin memnuniyetini en üst düzeye çıkarmak.</textarea>
+                        </div>
+                        <div class="form-group">
+                            <label data-tr="Vizyonumuz" data-en="Our Vision" data-de="Unsere Vision">Vizyonumuz</label>
+                            <textarea name="vision" rows="3" required>Sürdürülebilirlik ve yenilikçilik ilkeleriyle, perde sektöründe ulusal ve uluslararası düzeyde lider marka olmak.</textarea>
+                        </div>
+                        <button type="submit" class="submit-btn" data-tr="Güncelle" data-en="Update" data-de="Aktualisieren">Güncelle</button>
+                    </form>
+                </div>
+            </section>
+
+            <!-- Ürünler Section -->
             <section id="urunler" class="section">
-                <h2>Ürün Yönetimi</h2>
+                <h2 data-tr="Ürün Yönetimi" data-en="Product Management" data-de="Produktverwaltung">Ürün Yönetimi</h2>
                 <div class="form-container">
                     <form id="urun-form">
                         <div class="form-group">
-                            <label>Ürün Adı</label>
+                            <label data-tr="Ürün Adı" data-en="Product Name" data-de="Produktname">Ürün Adı</label>
                             <input type="text" name="name" required>
                         </div>
                         <div class="form-group">
-                            <label>Kategori</label>
+                            <label data-tr="Kategori" data-en="Category" data-de="Kategorie">Kategori</label>
                             <select name="category" required>
-                                <option value="">Seçiniz</option>
-                                <option value="stor">Stor Perde</option>
-                                <option value="zebra">Zebra Perde</option>
-                                <option value="klasik">Klasik Perde</option>
-                                <option value="guneslik">Güneşlik</option>
+                                <option value="" data-tr="Seçiniz" data-en="Select" data-de="Auswählen">Seçiniz</option>
+                                <option value="silverscreen" data-tr="Silverscreen Stor Perde" data-en="Silverscreen Roller Blind" data-de="Silverscreen Rollo">Silverscreen Stor Perde</option>
+                                <option value="stor" data-tr="Stor Perde" data-en="Roller Blind" data-de="Rollo">Stor Perde</option>
+                                <option value="zip" data-tr="Zip Perde" data-en="Zip Blind" data-de="Zip-Rollo">Zip Perde</option>
+                                <option value="ahsap" data-tr="Ahşap Jaluzi Perde" data-en="Wooden Venetian Blind" data-de="Holz-Jalousie">Ahşap Jaluzi Perde</option>
+                                <option value="dikey" data-tr="Dikey Perde" data-en="Vertical Blind" data-de="Vertikal-Jalousie">Dikey Perde</option>
+                                <option value="plise" data-tr="Plise Perde" data-en="Pleated Blind" data-de="Faltrollo">Plise Perde</option>
+                                <option value="tul" data-tr="Tül Perde" data-en="Sheer Curtain" data-de="Tüllvorhang">Tül Perde</option>
+                                <option value="fon" data-tr="Fon Perde" data-en="Blackout Curtain" data-de="Verdunkelungsvorhang">Fon Perde</option>
                             </select>
                         </div>
                         <div class="form-group">
-                            <label>Fiyat (₺/m²)</label>
-                            <input type="number" name="price" required>
-                        </div>
-                        <div class="form-group">
-                            <label>Açıklama</label>
+                            <label data-tr="Açıklama" data-en="Description" data-de="Beschreibung">Açıklama</label>
                             <textarea name="description" required></textarea>
                         </div>
                         <div class="form-group">
-                            <label>Resim Yükle</label>
+                            <label data-tr="Resim Yükle" data-en="Upload Image" data-de="Bild hochladen">Resim Yükle</label>
                             <input type="file" name="image" accept="image/*" required>
                             <div id="image-preview" class="image-preview"></div>
                         </div>
-                        <button type="submit" class="submit-btn">Ürün Ekle</button>
+                        <button type="submit" class="submit-btn" data-tr="Ürün Ekle" data-en="Add Product" data-de="Produkt hinzufügen">Ürün Ekle</button>
                     </form>
                 </div>
 
                 <div class="products-list">
-                    <h3>Mevcut Ürünler</h3>
+                    <h3 data-tr="Mevcut Ürünler" data-en="Current Products" data-de="Aktuelle Produkte">Mevcut Ürünler</h3>
                     <div id="products-container" class="products-grid"></div>
                 </div>
             </section>
 
+            <!-- Referanslar Section -->
+            <section id="referanslar" class="section">
+                <h2 data-tr="Referanslar Yönetimi" data-en="References Management" data-de="Referenzverwaltung">Referanslar Yönetimi</h2>
+                <div class="form-container">
+                    <form id="referans-form">
+                        <div class="form-group">
+                            <label data-tr="Proje Adı" data-en="Project Name" data-de="Projektname">Proje Adı</label>
+                            <input type="text" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label data-tr="Durum" data-en="Status" data-de="Status">Durum</label>
+                            <select name="status" required>
+                                <option value="devam" data-tr="Devam Eden" data-en="Ongoing" data-de="Laufend">Devam Eden</option>
+                                <option value="tamamlandi" data-tr="Tamamlanan" data-en="Completed" data-de="Abgeschlossen">Tamamlanan</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label data-tr="Açıklama" data-en="Description" data-de="Beschreibung">Açıklama</label>
+                            <textarea name="description" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label data-tr="Resim Yükle" data-en="Upload Image" data-de="Bild hochladen">Resim Yükle</label>
+                            <input type="file" name="image" accept="image/*">
+                            <div id="referans-image-preview" class="image-preview"></div>
+                        </div>
+                        <button type="submit" class="submit-btn" data-tr="Referans Ekle" data-en="Add Reference" data-de="Referenz hinzufügen">Referans Ekle</button>
+                    </form>
+                </div>
+
+                <div class="references-list">
+                    <h3 data-tr="Mevcut Referanslar" data-en="Current References" data-de="Aktuelle Referenzen">Mevcut Referanslar</h3>
+                    <div id="references-container" class="references-grid"></div>
+                </div>
+            </section>
+
+            <!-- Markalarımız Section -->
+            <section id="markalar" class="section">
+                <h2 data-tr="Markalarımız Yönetimi" data-en="Our Brands Management" data-de="Unsere Marken Verwaltung">Markalarımız Yönetimi</h2>
+                <div class="form-container">
+                    <form id="markalar-form">
+                        <div class="form-group">
+                            <label data-tr="Marka Adı" data-en="Brand Name" data-de="Markenname">Marka Adı</label>
+                            <input type="text" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label data-tr="Açıklama" data-en="Description" data-de="Beschreibung">Açıklama</label>
+                            <textarea name="description" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label data-tr="Resim Yükle" data-en="Upload Image" data-de="Bild hochladen">Resim Yükle</label>
+                            <input type="file" name="image" accept="image/*" required>
+                            <div id="markalar-image-preview" class="image-preview"></div>
+                        </div>
+                        <button type="submit" class="submit-btn" data-tr="Marka Ekle" data-en="Add Brand" data-de="Marke hinzufügen">Marka Ekle</button>
+                    </form>
+                </div>
+
+                <div class="brands-list">
+                    <h3 data-tr="Mevcut Markalar" data-en="Current Brands" data-de="Aktuelle Marken">Mevcut Markalar</h3>
+                    <div id="brands-container" class="brands-grid"></div>
+                </div>
+            </section>
+
+            <!-- Sosyal Sorumluluk Section -->
+            <section id="sosyal" class="section">
+                <h2 data-tr="Sosyal Sorumluluk İçeriği" data-en="Social Responsibility Content" data-de="Soziale Verantwortung Inhalt">Sosyal Sorumluluk İçeriği</h2>
+                <div class="form-container">
+                    <form id="sosyal-form">
+                        <div class="form-group">
+                            <label data-tr="Başlık" data-en="Title" data-de="Titel">Başlık</label>
+                            <input type="text" name="title" value="Yeşil Gelecek Stratejimiz" required>
+                        </div>
+                        <div class="form-group">
+                            <label data-tr="İçerik" data-en="Content" data-de="Inhalt">İçerik</label>
+                            <textarea name="content" rows="6" required>Sürdürülebilir bir gelecek için çevre dostu üretim ve geri dönüştürülebilir materyaller kullanıyoruz. Çevreye duyarlı üretim süreçleriyle topluma değer katıyoruz.</textarea>
+                        </div>
+                        <div class="form-group">
+                            <label data-tr="Arkaplan Resmi" data-en="Background Image" data-de="Hintergrundbild">Arkaplan Resmi</label>
+                            <input type="file" name="background-image" accept="image/*">
+                            <div id="sosyal-image-preview" class="image-preview"></div>
+                        </div>
+                        <button type="submit" class="submit-btn" data-tr="Güncelle" data-en="Update" data-de="Aktualisieren">Güncelle</button>
+                    </form>
+                </div>
+            </section>
+
+            <!-- İletişim Section -->
             <section id="iletisim" class="section">
-                <h2>İletişim Bilgileri</h2>
+                <h2 data-tr="İletişim Bilgileri" data-en="Contact Information" data-de="Kontaktinformationen">İletişim Bilgileri</h2>
                 <div class="form-container">
                     <form id="iletisim-form">
                         <div class="form-group">
-                            <label>Telefon</label>
-                            <input type="tel" name="phone" required>
+                            <label data-tr="E-posta" data-en="Email" data-de="E-Mail">E-posta</label>
+                            <input type="email" name="email" value="gunpay@gunpay.com.tr" required>
                         </div>
                         <div class="form-group">
-                            <label>WhatsApp</label>
-                            <input type="tel" name="whatsapp" required>
+                            <label data-tr="Telefon" data-en="Phone" data-de="Telefon">Telefon</label>
+                            <input type="tel" name="phone" value="+90 212 343 66 86" required>
                         </div>
                         <div class="form-group">
-                            <label>Instagram</label>
-                            <input type="text" name="instagram" required>
+                            <label data-tr="Adres" data-en="Address" data-de="Adresse">Adres</label>
+                            <textarea name="address" required>İstanbul, Türkiye</textarea>
                         </div>
-                        <div class="form-group">
-                            <label>Adres</label>
-                            <textarea name="address" required></textarea>
-                        </div>
-                        <button type="submit" class="submit-btn">Bilgileri Güncelle</button>
+                        <button type="submit" class="submit-btn" data-tr="Bilgileri Güncelle" data-en="Update Information" data-de="Informationen aktualisieren">Bilgileri Güncelle</button>
                     </form>
                 </div>
             </section>

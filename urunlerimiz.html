@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-tr="Ürünlerimiz | Günpay Perde" data-en="Our Products | Günpay Perde" data-de="Unsere Produkte | Günpay Perde">Ürünlerimiz | Günpay Perde</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/jpeg" href="images/gunpay.jpg">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .products-section { background: var(--light-color); padding: 60px 0; }
+        .products-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 36px; margin: 40px 0; }
+        .product-card { background: var(--white-color); border-radius: 14px; box-shadow: var(--shadow); overflow: hidden; transition: box-shadow 0.2s, transform 0.2s; display: flex; flex-direction: column; }
+        .product-card:hover { box-shadow: var(--shadow-hover); transform: translateY(-6px) scale(1.03); }
+        .product-card img { width: 100%; height: 220px; object-fit: cover; display: block; background: #f7f8fa; }
+        .product-content { padding: 28px 22px 22px 22px; flex: 1; display: flex; flex-direction: column; }
+        .product-content h3 { font-size: 1.25rem; font-weight: 700; color: var(--primary-dark); margin-bottom: 12px; }
+        .product-content p { font-size: 1.08rem; color: var(--dark-color); font-weight: 500; margin-bottom: 0; flex: 1; }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-top">
+            <div class="container">
+                <div class="contact-info">
+                    <span><i class="fas fa-envelope"></i> gunpay@gunpay.com.tr</span>
+                    <span><i class="fas fa-phone"></i> +90 212 343 66 86</span>
+                </div>
+                <div class="header-actions">
+                    <a href="#iletisim" class="teklif-btn" data-tr="Teklif Talebi" data-en="Request Quote" data-de="Angebot anfordern">Teklif Talebi</a>
+                    <div class="language-switcher">
+                        <span class="active" data-lang="tr">TR</span>
+                        <span data-lang="en">EN</span>
+                        <span data-lang="de">DE</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <nav class="navbar">
+            <div class="container">
+                <div class="navbar-brand">
+                    <img src="images/gunpay.jpg" alt="Günpay Logo" class="logo">
+                </div>
+                <div class="navbar-menu">
+                    <ul class="nav-list">
+                        <li><a href="index.html" class="nav-link" data-tr="Anasayfa" data-en="Home" data-de="Startseite">Anasayfa</a></li>
+                        <li class="dropdown">
+                            <a href="kurumsal.html" class="nav-link" data-tr="Kurumsal" data-en="Corporate" data-de="Unternehmen">Kurumsal <i class="fas fa-chevron-down"></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="kurumsal.html#hakkimizda" data-tr="Hakkımızda" data-en="About Us" data-de="Über uns">Hakkımızda</a></li>
+                                <li><a href="markalarimiz.html" data-tr="Markalarımız" data-en="Our Brands" data-de="Unsere Marken">Markalarımız</a></li>
+                                <li><a href="kurumsal.html#finansal-bilgiler" data-tr="Finansal ve Ticari Bilgiler" data-en="Financial and Commercial Information" data-de="Finanz- und Handelsinformationen">Finansal ve Ticari Bilgiler</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="urunlerimiz.html" class="nav-link" data-tr="Ürünlerimiz" data-en="Our Products" data-de="Unsere Produkte">Ürünlerimiz</a></li>
+                        <li class="dropdown">
+                            <a href="referanslar.html" class="nav-link" data-tr="Referanslar" data-en="References" data-de="Referenzen">Referanslar <i class="fas fa-chevron-down"></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="referanslar.html#devam-eden-projeler" data-tr="Devam Eden Projeler" data-en="Ongoing Projects" data-de="Laufende Projekte">Devam Eden Projeler</a></li>
+                                <li><a href="referanslar.html#tamamlanan-projeler" data-tr="Tamamlanan Projeler" data-en="Completed Projects" data-de="Abgeschlossene Projekte">Tamamlanan Projeler</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#iletisim" class="nav-link" data-tr="İletişim" data-en="Contact" data-de="Kontakt">İletişim</a></li>
+                    </ul>
+                </div>
+                <div class="navbar-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="products-section">
+            <div class="container">
+                <h2 style="font-weight:700; font-size:2rem; color:var(--primary-color); margin-bottom:0.5rem;" data-tr="Ürünlerimiz" data-en="Our Products" data-de="Unsere Produkte">Ürünlerimiz</h2>
+                <div style="width:60px; height:4px; background:var(--accent-color); border-radius:2px; margin-bottom:2.5rem;"></div>
+                <div class="products-grid">
+                    <div class="product-card">
+                        <img src="images/perde10copy.png" alt="Silverscreen Stor Perde">
+                        <div class="product-content">
+                            <h3 data-tr="Silverscreen Stor Perde" data-en="Silverscreen Roller Blind" data-de="Silverscreen Rollo">Silverscreen Stor Perde</h3>
+                            <p data-tr="Yüksek yalıtım, modern görünüm ve uzun ömürlü kullanım sunan özel seri." data-en="Special series offering high insulation, modern appearance and long-lasting use." data-de="Spezielle Serie mit hoher Isolierung, modernem Aussehen und langlebiger Nutzung.">Yüksek yalıtım, modern görünüm ve uzun ömürlü kullanım sunan özel seri.</p>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <img src="images/perde4cop.png" alt="Stor Perde">
+                        <div class="product-content">
+                            <h3 data-tr="Stor Perde" data-en="Roller Blind" data-de="Rollo">Stor Perde</h3>
+                            <p data-tr="Minimalist tasarım, kolay kullanım ve her mekana uygun klasik perde çözümü." data-en="Minimalist design, easy use and classic curtain solution suitable for every space." data-de="Minimalistisches Design, einfache Bedienung und klassische Vorhanglösung für jeden Raum geeignet.">Minimalist tasarım, kolay kullanım ve her mekana uygun klasik perde çözümü.</p>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <img src="images/perde7copy.png" alt="Zip Perde">
+                        <div class="product-content">
+                            <h3 data-tr="Zip Perde" data-en="Zip Blind" data-de="Zip-Rollo">Zip Perde</h3>
+                            <p data-tr="Dış mekanlar için rüzgara dayanıklı, şık ve fonksiyonel perde sistemi." data-en="Wind-resistant, stylish and functional curtain system for outdoor spaces." data-de="Windbeständiges, stilvolles und funktionales Vorhangsystem für Außenbereiche.">Dış mekanlar için rüzgara dayanıklı, şık ve fonksiyonel perde sistemi.</p>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <img src="images/perde6copy.png" alt="Ahşap Jaluzi Perde">
+                        <div class="product-content">
+                            <h3 data-tr="Ahşap Jaluzi Perde" data-en="Wooden Venetian Blind" data-de="Holz-Jalousie">Ahşap Jaluzi Perde</h3>
+                            <p data-tr="Doğal ahşap dokusu ve şık görünümüyle çağdaş mekanlar için ideal." data-en="Ideal for contemporary spaces with natural wood texture and elegant appearance." data-de="Ideal für zeitgenössische Räume mit natürlicher Holztextur und eleganter Optik.">Doğal ahşap dokusu ve şık görünümüyle çağdaş mekanlar için ideal.</p>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <img src="images/perde5copy.png" alt="Dikey Perde">
+                        <div class="product-content">
+                            <h3 data-tr="Dikey Perde" data-en="Vertical Blind" data-de="Vertikal-Jalousie">Dikey Perde</h3>
+                            <p data-tr="Modern ve minimal tasarımıyla ofis ve ticari alanlar için mükemmel çözüm." data-en="Perfect solution for offices and commercial areas with modern and minimal design." data-de="Perfekte Lösung für Büros und Gewerberäume mit modernem und minimalistischem Design.">Modern ve minimal tasarımıyla ofis ve ticari alanlar için mükemmel çözüm.</p>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <img src="images/perde2cop.png" alt="Plise Perde">
+                        <div class="product-content">
+                            <h3 data-tr="Plise Perde" data-en="Pleated Blind" data-de="Falten-Rollo">Plise Perde</h3>
+                            <p data-tr="Estetik ve fonksiyonel, farklı mekanlara uyum sağlayan plise perde sistemi." data-en="Aesthetic and functional pleated curtain system that adapts to different spaces." data-de="Ästhetisches und funktionales Falten-Rollosystem, das sich verschiedenen Räumen anpasst.">Estetik ve fonksiyonel, farklı mekanlara uyum sağlayan plise perde sistemi.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="iletisim" class="contact-section">
+            <div class="container">
+                <h2 data-tr="İletişim" data-en="Contact" data-de="Kontakt">İletişim</h2>
+                <div class="contact-content">
+                    <div class="contact-info-card">
+                        <h3 data-tr="Bize Ulaşın" data-en="Get in Touch" data-de="Kontaktieren Sie uns">Bize Ulaşın</h3>
+                        <p><i class="fas fa-envelope"></i> gunpay@gunpay.com.tr</p>
+                        <p><i class="fas fa-phone"></i> +90 212 343 66 86</p>
+                        <p><i class="fas fa-map-marker-alt"></i> <span data-tr="İstanbul, Türkiye" data-en="Istanbul, Turkey" data-de="Istanbul, Türkei">İstanbul, Türkiye</span></p>
+                    </div>
+                    <div class="contact-form-card">
+                        <h3 data-tr="İletişim Formu" data-en="Contact Form" data-de="Kontaktformular">İletişim Formu</h3>
+                        <form>
+                            <div class="form-group">
+                                <input type="text" placeholder="Adınız Soyadınız" data-tr-placeholder="Adınız Soyadınız" data-en-placeholder="Your Name" data-de-placeholder="Ihr Name" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" placeholder="E-posta" data-tr-placeholder="E-posta" data-en-placeholder="Email" data-de-placeholder="E-Mail" required>
+                            </div>
+                            <div class="form-group">
+                                <textarea placeholder="Mesajınız" data-tr-placeholder="Mesajınız" data-en-placeholder="Your Message" data-de-placeholder="Ihre Nachricht" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary" data-tr="Gönder" data-en="Send" data-de="Senden">Gönder</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4 data-tr="Günpay Perde" data-en="Günpay Perde" data-de="Günpay Perde">Günpay Perde</h4>
+                    <p data-tr="Modern perde çözümleri ile yaşam alanlarınıza değer katıyoruz." data-en="We add value to your living spaces with modern curtain solutions." data-de="Wir verleihen Ihren Wohnräumen mit modernen Vorhanglösungen Wert.">Modern perde çözümleri ile yaşam alanlarınıza değer katıyoruz.</p>
+                </div>
+                <div class="footer-section">
+                    <h4 data-tr="Hızlı Linkler" data-en="Quick Links" data-de="Schnelllinks">Hızlı Linkler</h4>
+                    <ul>
+                        <li><a href="index.html" data-tr="Anasayfa" data-en="Home" data-de="Startseite">Anasayfa</a></li>
+                        <li><a href="kurumsal.html" data-tr="Kurumsal" data-en="Corporate" data-de="Unternehmen">Kurumsal</a></li>
+                        <li><a href="urunlerimiz.html" data-tr="Ürünlerimiz" data-en="Our Products" data-de="Unsere Produkte">Ürünlerimiz</a></li>
+                        <li><a href="referanslar.html" data-tr="Referanslar" data-en="References" data-de="Referenzen">Referanslar</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 data-tr="İletişim" data-en="Contact" data-de="Kontakt">İletişim</h4>
+                    <ul>
+                        <li><i class="fas fa-envelope"></i> gunpay@gunpay.com.tr</li>
+                        <li><i class="fas fa-phone"></i> +90 212 343 66 86</li>
+                        <li><i class="fas fa-map-marker-alt"></i> <span data-tr="İstanbul, Türkiye" data-en="Istanbul, Turkey" data-de="Istanbul, Türkei">İstanbul, Türkiye</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p data-tr="© 2024 Günpay Perde. Tüm hakları saklıdır." data-en="© 2024 Günpay Perde. All rights reserved." data-de="© 2024 Günpay Perde. Alle Rechte vorbehalten.">© 2024 Günpay Perde. Tüm hakları saklıdır.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html> 

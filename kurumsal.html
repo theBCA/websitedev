@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-tr="Kurumsal | Günpay Perde" data-en="Corporate | Günpay Perde" data-de="Unternehmen | Günpay Perde">Kurumsal | Günpay Perde</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/jpeg" href="images/gunpay.jpg">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .kurumsal-section { max-width: 900px; margin: 40px auto; background: var(--white-color); border-radius: 16px; box-shadow: var(--shadow); padding: 40px 32px; }
+        .kurumsal-section h2 { font-size: 2.2rem; font-weight: 700; margin-bottom: 18px; color: #1b1c2d !important; }
+        .kurumsal-section h3 { font-size: 1.3rem; font-weight: 600; margin-top: 32px; color: #1b1c2d !important; }
+        .kurumsal-section p { font-size: 1.08rem; color: var(--dark-color); font-weight: 500; margin-bottom: 18px; }
+        .values-list { display: flex; flex-wrap: wrap; gap: 24px; margin-top: 18px; }
+        .value-card { flex: 1 1 220px; background: var(--light-color); border-radius: 10px; padding: 18px 16px; box-shadow: var(--shadow); text-align: center; }
+        .value-card i { font-size: 2rem; color: #1b1c2d !important; margin-bottom: 10px; }
+        .value-card span { display: block; font-weight: 600; color: #1b1c2d !important; margin-bottom: 6px; }
+        .firma-profili-title {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: var(--secondary-color) !important;
+            margin-bottom: 0.5rem;
+            letter-spacing: 0.5px;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-top">
+            <div class="container">
+                <div class="contact-info">
+                    <span><i class="fas fa-envelope"></i> gunpay@gunpay.com.tr</span>
+                    <span><i class="fas fa-phone"></i> +90 212 343 66 86</span>
+                </div>
+                <div class="header-actions">
+                    <a href="#iletisim" class="teklif-btn" data-tr="Teklif Talebi" data-en="Request Quote" data-de="Angebot anfordern">Teklif Talebi</a>
+                    <div class="language-switcher">
+                        <span class="active" data-lang="tr">TR</span>
+                        <span data-lang="en">EN</span>
+                        <span data-lang="de">DE</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <nav class="navbar">
+            <div class="container">
+                <div class="navbar-brand">
+                    <img src="images/gunpay.jpg" alt="Günpay Logo" class="logo">
+                </div>
+                <div class="navbar-menu">
+                    <ul class="nav-list">
+                        <li><a href="index.html" class="nav-link" data-tr="Anasayfa" data-en="Home" data-de="Startseite">Anasayfa</a></li>
+                        <li class="dropdown">
+                            <a href="kurumsal.html" class="nav-link" data-tr="Kurumsal" data-en="Corporate" data-de="Unternehmen">Kurumsal <i class="fas fa-chevron-down"></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="kurumsal.html#hakkimizda" data-tr="Hakkımızda" data-en="About Us" data-de="Über uns">Hakkımızda</a></li>
+                                <li><a href="markalarimiz.html" data-tr="Markalarımız" data-en="Our Brands" data-de="Unsere Marken">Markalarımız</a></li>
+                                <li><a href="kurumsal.html#finansal-bilgiler" data-tr="Finansal ve Ticari Bilgiler" data-en="Financial and Commercial Information" data-de="Finanz- und Handelsinformationen">Finansal ve Ticari Bilgiler</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="urunlerimiz.html" class="nav-link" data-tr="Ürünlerimiz" data-en="Our Products" data-de="Unsere Produkte">Ürünlerimiz</a></li>
+                        <li class="dropdown">
+                            <a href="referanslar.html" class="nav-link" data-tr="Referanslar" data-en="References" data-de="Referenzen">Referanslar <i class="fas fa-chevron-down"></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="referanslar.html#devam-eden-projeler" data-tr="Devam Eden Projeler" data-en="Ongoing Projects" data-de="Laufende Projekte">Devam Eden Projeler</a></li>
+                                <li><a href="referanslar.html#tamamlanan-projeler" data-tr="Tamamlanan Projeler" data-en="Completed Projects" data-de="Abgeschlossene Projekte">Tamamlanan Projeler</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#iletisim" class="nav-link" data-tr="İletişim" data-en="Contact" data-de="Kontakt">İletişim</a></li>
+                    </ul>
+                </div>
+                <div class="navbar-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="kurumsal-section">
+            <h2 style="font-size:2.2rem; font-weight:800; color:var(--secondary-color); margin-bottom:0.5rem; letter-spacing:0.5px;" data-tr="Hakkımızda" data-en="About Us" data-de="Über uns">Hakkımızda</h2>
+            <p data-tr="Günpay Perde, 1990 yılından bu yana modern ve çağdaş perde sektöründe yenilikçi çözümler sunan, sektörün öncü firmalarından biridir. Avrupa'nın seçkin markalarından ithal edilen hammaddelerle, yüksek kalite standartlarında üretim yapıyoruz." data-en="Günpay Perde is one of the leading companies in the modern and contemporary curtain sector, offering innovative solutions since 1990. We produce with high quality standards using raw materials imported from Europe's distinguished brands." data-de="Günpay Perde ist eines der führenden Unternehmen im modernen und zeitgenössischen Vorhangsektor und bietet seit 1990 innovative Lösungen an. Wir produzieren mit hohen Qualitätsstandards unter Verwendung von Rohstoffen, die von Europas renommierten Marken importiert werden.">Günpay Perde, 1990 yılından bu yana modern ve çağdaş perde sektöründe yenilikçi çözümler sunan, sektörün öncü firmalarından biridir. Avrupa'nın seçkin markalarından ithal edilen hammaddelerle, yüksek kalite standartlarında üretim yapıyoruz.</p>
+            <h3 data-tr="Misyonumuz" data-en="Our Mission" data-de="Unsere Mission">Misyonumuz</h3>
+            <p data-tr="Yaşam ve çalışma alanlarına değer katan, fonksiyonel ve estetik perde sistemleriyle müşterilerimizin memnuniyetini en üst düzeye çıkarmak." data-en="To maximize customer satisfaction with functional and aesthetic curtain systems that add value to living and working spaces." data-de="Die Zufriedenheit unserer Kunden durch funktionale und ästhetische Vorhangsysteme zu maximieren, die Wohn- und Arbeitsräumen Wert verleihen.">Yaşam ve çalışma alanlarına değer katan, fonksiyonel ve estetik perde sistemleriyle müşterilerimizin memnuniyetini en üst düzeye çıkarmak.</p>
+            <h3 data-tr="Vizyonumuz" data-en="Our Vision" data-de="Unsere Vision">Vizyonumuz</h3>
+            <p data-tr="Sürdürülebilirlik ve yenilikçilik ilkeleriyle, perde sektöründe ulusal ve uluslararası düzeyde lider marka olmak." data-en="To become a leading brand in the curtain sector at national and international levels with sustainability and innovation principles." data-de="Mit Nachhaltigkeits- und Innovationsprinzipien eine führende Marke im Vorhangsektor auf nationaler und internationaler Ebene zu werden.">Sürdürülebilirlik ve yenilikçilik ilkeleriyle, perde sektöründe ulusal ve uluslararası düzeyde lider marka olmak.</p>
+            <h3 data-tr="Değerlerimiz" data-en="Our Values" data-de="Unsere Werte">Değerlerimiz</h3>
+            <div class="values-list">
+                <div class="value-card"><i class="fas fa-leaf"></i><span data-tr="Sürdürülebilirlik" data-en="Sustainability" data-de="Nachhaltigkeit">Sürdürülebilirlik</span><span data-tr="Çevreye duyarlı üretim ve geri dönüştürülebilir materyaller." data-en="Environmentally conscious production and recyclable materials." data-de="Umweltbewusste Produktion und recycelbare Materialien.">Çevreye duyarlı üretim ve geri dönüştürülebilir materyaller.</span></div>
+                <div class="value-card"><i class="fas fa-lightbulb"></i><span data-tr="Yenilikçilik" data-en="Innovation" data-de="Innovation">Yenilikçilik</span><span data-tr="Modern tasarım ve teknolojik çözümler." data-en="Modern design and technological solutions." data-de="Modernes Design und technologische Lösungen.">Modern tasarım ve teknolojik çözümler.</span></div>
+                <div class="value-card"><i class="fas fa-users"></i><span data-tr="Müşteri Odaklılık" data-en="Customer Focus" data-de="Kundenorientierung">Müşteri Odaklılık</span><span data-tr="Her projede maksimum memnuniyet." data-en="Maximum satisfaction in every project." data-de="Maximale Zufriedenheit in jedem Projekt.">Her projede maksimum memnuniyet.</span></div>
+                <div class="value-card"><i class="fas fa-award"></i><span data-tr="Kalite" data-en="Quality" data-de="Qualität">Kalite</span><span data-tr="Avrupa standartlarında ürün ve hizmet." data-en="Products and services at European standards." data-de="Produkte und Dienstleistungen nach europäischen Standards.">Avrupa standartlarında ürün ve hizmet.</span></div>
+            </div>
+        </section>
+        <section id="iletisim" class="contact-section">
+            <div class="container">
+                <h2 data-tr="İletişim" data-en="Contact" data-de="Kontakt">İletişim</h2>
+                <div class="contact-content">
+                    <div class="contact-info-card">
+                        <h3 data-tr="Bize Ulaşın" data-en="Get in Touch" data-de="Kontaktieren Sie uns">Bize Ulaşın</h3>
+                        <p><i class="fas fa-envelope"></i> gunpay@gunpay.com.tr</p>
+                        <p><i class="fas fa-phone"></i> +90 212 343 66 86</p>
+                        <p><i class="fas fa-map-marker-alt"></i> <span data-tr="İstanbul, Türkiye" data-en="Istanbul, Turkey" data-de="Istanbul, Türkei">İstanbul, Türkiye</span></p>
+                    </div>
+                    <div class="contact-form-card">
+                        <h3 data-tr="İletişim Formu" data-en="Contact Form" data-de="Kontaktformular">İletişim Formu</h3>
+                        <form>
+                            <div class="form-group">
+                                <input type="text" placeholder="Adınız Soyadınız" data-tr-placeholder="Adınız Soyadınız" data-en-placeholder="Your Name" data-de-placeholder="Ihr Name" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" placeholder="E-posta" data-tr-placeholder="E-posta" data-en-placeholder="Email" data-de-placeholder="E-Mail" required>
+                            </div>
+                            <div class="form-group">
+                                <textarea placeholder="Mesajınız" data-tr-placeholder="Mesajınız" data-en-placeholder="Your Message" data-de-placeholder="Ihre Nachricht" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary" data-tr="Gönder" data-en="Send" data-de="Senden">Gönder</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4 data-tr="Günpay Perde" data-en="Günpay Perde" data-de="Günpay Perde">Günpay Perde</h4>
+                    <p data-tr="Modern perde çözümleri ile yaşam alanlarınıza değer katıyoruz." data-en="We add value to your living spaces with modern curtain solutions." data-de="Wir verleihen Ihren Wohnräumen mit modernen Vorhanglösungen Wert.">Modern perde çözümleri ile yaşam alanlarınıza değer katıyoruz.</p>
+                </div>
+                <div class="footer-section">
+                    <h4 data-tr="Hızlı Linkler" data-en="Quick Links" data-de="Schnelllinks">Hızlı Linkler</h4>
+                    <ul>
+                        <li><a href="index.html" data-tr="Anasayfa" data-en="Home" data-de="Startseite">Anasayfa</a></li>
+                        <li><a href="kurumsal.html" data-tr="Kurumsal" data-en="Corporate" data-de="Unternehmen">Kurumsal</a></li>
+                        <li><a href="urunlerimiz.html" data-tr="Ürünlerimiz" data-en="Our Products" data-de="Unsere Produkte">Ürünlerimiz</a></li>
+                        <li><a href="referanslar.html" data-tr="Referanslar" data-en="References" data-de="Referenzen">Referanslar</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 data-tr="İletişim" data-en="Contact" data-de="Kontakt">İletişim</h4>
+                    <ul>
+                        <li><i class="fas fa-envelope"></i> gunpay@gunpay.com.tr</li>
+                        <li><i class="fas fa-phone"></i> +90 212 343 66 86</li>
+                        <li><i class="fas fa-map-marker-alt"></i> <span data-tr="İstanbul, Türkiye" data-en="Istanbul, Turkey" data-de="Istanbul, Türkei">İstanbul, Türkiye</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p data-tr="© 2024 Günpay Perde. Tüm hakları saklıdır." data-en="© 2024 Günpay Perde. All rights reserved." data-de="© 2024 Günpay Perde. Alle Rechte vorbehalten.">© 2024 Günpay Perde. Tüm hakları saklıdır.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html> 

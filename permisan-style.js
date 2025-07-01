@@ -83,110 +83,18 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('scroll', updateActiveNavLink);
     
     // Language switcher functionality
-    let currentLanguage = localStorage.getItem('selectedLanguage') || 'tr';
-    
-    // Initialize language on page load
-    function initializeLanguage() {
-        const languageSwitcher = document.querySelector('.language-switcher');
-        if (languageSwitcher) {
-            const languageSpans = languageSwitcher.querySelectorAll('span');
-            languageSpans.forEach(span => {
-                const lang = span.getAttribute('data-lang');
-                if (lang === currentLanguage) {
-                    span.classList.add('active');
-                } else {
-                    span.classList.remove('active');
-                }
+    const languageSwitcher = document.querySelector('.language-switcher');
+    if (languageSwitcher) {
+        const languageSpans = languageSwitcher.querySelectorAll('span');
+        languageSpans.forEach(span => {
+            span.addEventListener('click', function() {
+                languageSpans.forEach(s => s.classList.remove('active'));
+                this.classList.add('active');
                 
-                span.addEventListener('click', function() {
-                    const newLang = this.getAttribute('data-lang');
-                    if (newLang && newLang !== currentLanguage) {
-                        languageSpans.forEach(s => s.classList.remove('active'));
-                        this.classList.add('active');
-                        currentLanguage = newLang;
-                        localStorage.setItem('selectedLanguage', newLang);
-                        switchLanguage(newLang);
-                    }
-                });
+                // Here you can add actual language switching logic
+                console.log('Language switched to:', this.textContent);
             });
-            
-            // Apply saved language on page load
-            if (currentLanguage !== 'tr') {
-                switchLanguage(currentLanguage);
-            }
-        }
-    }
-    
-    // Initialize language system
-    initializeLanguage();
-    
-    function switchLanguage(lang) {
-        // Update page title
-        const title = document.querySelector('title');
-        if (title && title.getAttribute(`data-${lang}`)) {
-            title.textContent = title.getAttribute(`data-${lang}`);
-        }
-        
-        // Update all elements with translation attributes
-        const elements = document.querySelectorAll('[data-tr], [data-en], [data-de]');
-        elements.forEach(element => {
-            const translation = element.getAttribute(`data-${lang}`);
-            if (translation) {
-                element.textContent = translation;
-            }
         });
-        
-        // Update placeholders
-        const inputs = document.querySelectorAll('input[data-tr-placeholder], textarea[data-tr-placeholder]');
-        inputs.forEach(input => {
-            const placeholder = input.getAttribute(`data-${lang}-placeholder`);
-            if (placeholder) {
-                input.placeholder = placeholder;
-            }
-        });
-        
-        // Update select options
-        const selects = document.querySelectorAll('select option[data-tr]');
-        selects.forEach(option => {
-            const translation = option.getAttribute(`data-${lang}`);
-            if (translation) {
-                option.textContent = translation;
-            }
-        });
-        
-        // Update form submission messages
-        const contactForm = document.querySelector('.contact-form');
-        if (contactForm) {
-            const submitMessages = {
-                tr: 'Teklif talebiniz başarıyla gönderildi! En kısa sürede size dönüş yapacağız.',
-                en: 'Your quote request has been sent successfully! We will get back to you as soon as possible.',
-                de: 'Ihre Angebotsanfrage wurde erfolgreich gesendet! Wir melden uns schnellstmöglich bei Ihnen.'
-            };
-            
-            contactForm.addEventListener('submit', function(e) {
-                e.preventDefault();
-                
-                const submitButton = this.querySelector('button[type="submit"]');
-                const originalText = submitButton.textContent;
-                
-                // Show loading state
-                const loadingMessages = {
-                    tr: 'Gönderiliyor...',
-                    en: 'Sending...',
-                    de: 'Wird gesendet...'
-                };
-                submitButton.textContent = loadingMessages[lang] || loadingMessages.tr;
-                submitButton.disabled = true;
-                
-                // Simulate form submission
-                setTimeout(() => {
-                    alert(submitMessages[lang] || submitMessages.tr);
-                    this.reset();
-                    submitButton.textContent = originalText;
-                    submitButton.disabled = false;
-                }, 2000);
-            });
-        }
     }
     
     // Scroll animations
@@ -252,7 +160,28 @@ document.addEventListener('DOMContentLoaded', function() {
         lastScrollTop = scrollTop;
     });
     
-
+    // Contact form functionality
+    const contactForm = document.querySelector('.contact-form');
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const submitButton = this.querySelector('button[type="submit"]');
+            const originalText = submitButton.textContent;
+            
+            // Show loading state
+            submitButton.textContent = 'Gönderiliyor...';
+            submitButton.disabled = true;
+            
+            // Simulate form submission
+            setTimeout(() => {
+                alert('Teklif talebiniz başarıyla gönderildi! En kısa sürede size dönüş yapacağız.');
+                this.reset();
+                submitButton.textContent = originalText;
+                submitButton.disabled = false;
+            }, 2000);
+        });
+    }
     
     // Teklif button functionality
     const teklifBtn = document.querySelector('.teklif-btn');
@@ -295,7 +224,7 @@ document.addEventListener('DOMContentLoaded', function() {
         button.addEventListener('click', function(e) {
             // Prevent default for buttons without href
             if (!this.getAttribute('href') || this.getAttribute('href') === '#') {
-    e.preventDefault();
+                e.preventDefault();
             }
             
             if (!this.classList.contains('btn-outline')) {
